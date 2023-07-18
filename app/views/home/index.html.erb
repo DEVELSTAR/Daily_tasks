@@ -1,16 +1,18 @@
-<h1>Welcome to the Task App!</h1>
+<div class="home-index">
+	<h1 class="heading">Welcome to the Task App!</h1>
+	<div class="home-index-container">
+		<% if @names.any? %>
+		  <div class="home-index-btns">
+		    <% @names.each do |name| %>
+		      <div class="home-index-btn"><%= link_to name, posts_by_name_path(name: name), class: "btn" %></div>
+		    <% end %>
+		  </div>
+		<% else %>
+		  <p>No posts found.</p>
+		<% end %>
 
-<% if @names.any? %>
-  <h2>Links based on names:</h2>
-  <ul>
-    <% @names.each do |name| %>
-      <li><%= link_to name, posts_by_name_path(name: name) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No posts found.</p>
-<% end %>
-
-<%= link_to 'New Post', new_post_path %>
-<br>
-<%= link_to 'Index', posts_path %>
+		<%= link_to 'New Post', new_post_path %>
+		<br>
+		<%= link_to 'Index', posts_path %>
+	</div>
+</div>

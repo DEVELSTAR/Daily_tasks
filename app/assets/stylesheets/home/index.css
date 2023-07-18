@@ -1,0 +1,40 @@
+.home-index{
+/*	border: 2px solid red;*/
+	height: 90vh;
+}
+.heading{
+	text-align: center;
+}
+.home-index-container{
+	text-align: center;
+}
+.home-index-btns{
+/*	border: 2px solid red;*/
+	display: flex;
+	align-items: center;
+	margin: 5%;
+	margin-left: 10%;
+}
+.home-index-btn{
+	border: 1px solid black;
+	height: 500px;
+	width: 500px;
+	align-items: center;
+	background-color: yellow;
+	display: flex;
+}
+.home-index-btn .btn{
+/*	border: 2px solid red;*/
+	font-size: 50px;
+	text-transform: uppercase;
+	font-family: arial;
+	color: black;
+	text-decoration: none;
+	align-items: center;
+	margin-left: 35%;
+	font-weight: bolder;
+}
+.home-index-btn .btn:hover{
+	color: green;
+	transform: scale(1, 1.4);
+}
