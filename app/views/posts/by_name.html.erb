@@ -1,0 +1,13 @@
+<h1><%= @posts_by_name.first.name %>'s posts</h1>
+<% if @posts_by_name.any? %>
+  <ul>
+    <% @posts_by_name.each do |post| %>
+      <li>Date: <%= post.date %>, Time: <%= post.time %>,  Period: <%= post.period %></li>
+      <li>English: <%= post.english %></li>
+      <li>Math: <%= post.math %></li>
+      <li>Science: <%= post.science %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No posts with the name "<%= @posts_by_name.first.name %>" has no post.</p>
+<% end %>

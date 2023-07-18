@@ -1,18 +1,16 @@
-<div>
-	<h1>Landing page.</h1>
+<h1>Welcome to the Task App!</h1>
 
-	<div>
-		<div>Daily Tasks.</div>
-		<div>Monthly Tasks.</div>
-		<div>Yearly Tasks.</div>
-	</div>
+<% if @names.any? %>
+  <h2>Links based on names:</h2>
+  <ul>
+    <% @names.each do |name| %>
+      <li><%= link_to name, posts_by_name_path(name: name) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No posts found.</p>
+<% end %>
 
-	<div>
-		<div>Graphs</div>
-	</div>
-
-	<div>Tests</div>
-	<div>Remains work</div>
-	<div>Left test</div>
-
-</div>
+<%= link_to 'New Post', new_post_path %>
+<br>
+<%= link_to 'Index', posts_path %>

@@ -1,0 +1,43 @@
+<h1>Create a New Post</h1>
+
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :subject %>
+  <%= form.text_field :subject %>
+
+  <% # Fields for Math subject %>
+  <% if @post.subject == 'Math' %>
+    <%= form.label :chapter %>
+    <%= form.text_field :math %>
+
+    <%= form.label :exercise %>
+    <%= form.text_field :exercise %>
+  <% end %>
+
+  <% # Fields for Science subject %>
+  <% if @post.subject == 'Science' %>
+    <%= form.label :chapter %>
+    <%= form.text_field :science %>
+  <% end %>
+
+  <% # Fields for English subject %>
+  <% if @post.subject == 'English' %>
+    <%= form.label :content %>
+    <%= form.text_field :english %>
+  <% end %>
+
+  <%= form.label :time %>
+  <%= form.time_field :time %>
+
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+
+  <%= form.label :period %>
+  <%= form.text_field :period %>
+
+  <%= form.submit %>
+<% end %>
+
+<%= link_to 'Back', posts_path %>

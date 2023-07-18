@@ -1,0 +1,12 @@
+<!-- app/views/posts/index.html.erb -->
+<h1>All Posts</h1>
+<ul>
+  <% @all_posts.each do |post| %>
+      <li><strong><%= post.name %></strong>, Date: <%= post.date %>, Time: <%= post.time %>,  Period: <%= post.period %></li>
+      <li>English: <%= post.english %></li>
+      <li>Math: <%= post.math %></li>
+      <li>Science: <%= post.science %></li>
+      <br>
+      <br>
+    <% end %>
+</ul>
