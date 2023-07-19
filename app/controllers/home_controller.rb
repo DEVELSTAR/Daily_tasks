@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @names = Post.pluck(:name).uniq
+    @ayan_posts = Post.joins(:user).where(users: { name: "Ayan" })
+    @anam_posts = Post.joins(:user).where(users: { name: "Anam" })
+    @neha_posts = Post.joins(:user).where(users: { name: "Neha" })
   end
 end

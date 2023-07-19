@@ -1,19 +1,16 @@
 <div class="home-index">
 	<h1 class="heading">Welcome to the Task App!</h1>
 	<div class="home-index-container">
-		<% if @names.any? %>
-		  <div class="home-index-btns">
-		    <% @names.each do |name| %>
-		      <div class="home-index-btn"><%= link_to name, posts_by_name_path(name: name), class: "btn" %></div>
-		    <% end %>
-		  </div>
-		<% else %>
-		  <p>No posts found.</p>
-		<% end %>
 
-		<%= link_to 'New Post', new_post_path %>
-		<br>
-		<%= link_to 'Index', posts_path %>
-		<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
+		<div class="home-index-btns">
+			<div class="home-index-btn"><%= link_to "Neha", neha_posts_path, class: "btn" %></div>
+			<div class="home-index-btn"><%= link_to "Anam", anam_posts_path, class: "btn"  %></div>
+			<div class="home-index-btn"><%= link_to "Ayan", ayan_posts_path, class: "btn"  %></div>
+		</div>
+		<div>
+			<%= link_to 'New Post', new_post_path %><br>
+			<%= link_to 'Index', posts_path %><br>
+			<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
+		</div>
 	</div>
 </div>
