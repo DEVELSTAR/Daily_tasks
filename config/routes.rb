@@ -3,7 +3,5 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
   resources :posts
-  get 'ayan_posts', to: 'posts#ayan_posts'
-  get 'anam_posts', to: 'posts#anam_posts'
-  get 'neha_posts', to: 'posts#neha_posts'
+  get '/user_posts/:user_name', to: 'posts#user_posts', as: :user_posts
 end

@@ -1,16 +1,21 @@
 <div class="home-index">
-	<h1 class="heading">Welcome to the Task App!</h1>
-	<div class="home-index-container">
-
-		<div class="home-index-btns">
-			<div class="home-index-btn"><%= link_to "Neha", neha_posts_path, class: "btn" %></div>
-			<div class="home-index-btn"><%= link_to "Anam", anam_posts_path, class: "btn"  %></div>
-			<div class="home-index-btn"><%= link_to "Ayan", ayan_posts_path, class: "btn"  %></div>
-		</div>
-		<div>
-			<%= link_to 'New Post', new_post_path %><br>
-			<%= link_to 'Index', posts_path %><br>
-			<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
-		</div>
-	</div>
+  <h1 class="heading">Welcome to the Task App!</h1>
+  <div class="home-index-container">
+    <div class="home-index-btns">
+      <div class="home-index-btn">
+        <%= link_to "Neha", user_posts_path(user_name: 'Neha'), class: "btn" %>
+      </div>
+      <div class="home-index-btn">
+        <%= link_to "Anam", user_posts_path(user_name: 'Anam'), class: "btn" %>
+      </div>
+      <div class="home-index-btn">
+        <%= link_to "Ayan", user_posts_path(user_name: 'Ayan'), class: "btn" %>
+      </div>
+    </div>
+    <div>
+      <%= link_to 'New Post', new_post_path %><br>
+      <%= link_to 'Index', posts_path %><br>
+      <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
+    </div>
+  </div>
 </div>

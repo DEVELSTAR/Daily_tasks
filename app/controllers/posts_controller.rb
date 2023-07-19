@@ -1,18 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(:created_at)
+    @posts = Post.includes(:user).order(:created_at)
   end
 
-  def anam_posts
-    @anam_posts = Post.includes(:user).where(users: { name: 'Anam' })
-  end
-
-  def ayan_posts
-    @ayan_posts = Post.includes(:user).where(users: { name: "Ayan" })
-  end
-
-  def neha_posts
-    @neha_posts = Post.includes(:user).where(users: { name: "Neha" })
+  def user_posts
+    @user_name = params[:user_name]
+    @user = User.find_by(name: @user_name)
+    @user_posts = @user.posts.includes(:user) if @user
   end
 
   def by_date

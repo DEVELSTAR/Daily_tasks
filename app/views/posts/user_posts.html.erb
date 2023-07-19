@@ -1,0 +1,27 @@
+<div class="user-posts bg-gray-100 p-6 rounded-lg shadow-lg">
+  <h1 class="text-3xl font-bold mb-4 text-center"><%= @user_name %>'s Posts</h1>
+  <ul class="space-y-6">
+    <% @user_posts.each do |post| %>
+      <li class="bg-white rounded-lg shadow-md px-6 py-4">
+        <div class="flex items-center justify-between mb-3">
+          <div class="text-gray-600">Date & Time <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")  %></div>
+          <div class="text-gray-600">Period: <%= post.period %></div>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <div class="font-semibold">English:</div>
+            <div><%= post.english %></div>
+          </div>
+          <div>
+            <div class="font-semibold">Math:</div>
+            <div><%= post.math %></div>
+          </div>
+          <div>
+            <div class="font-semibold">Science:</div>
+            <div><%= post.science %></div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
