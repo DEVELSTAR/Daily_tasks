@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_user_signed_in
+  # before_action :check_user_signed_in
   before_action :check_admin, only: [:update, :delete_user]
   
   def index

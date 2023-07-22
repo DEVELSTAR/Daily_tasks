@@ -15,6 +15,10 @@ class PostsController < ApplicationController
     @user_name = params[:user_name]
     @user = User.find_by(name: @user_name)
     @user_posts = @user.posts.includes(:user) if @user
+    respond_to do |format|
+      format.json { render json: @user_posts }
+      format.html { }
+    end
   end
 
   def by_date
