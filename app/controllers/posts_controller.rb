@@ -1,6 +1,14 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.includes(:user).order(:created_at)
+    @user_names = User.pluck(:name).uniq
+
+    # Check if a user name is selected from the dropdown
+    if params[:user_name].present?
+      @user_posts = @posts.where(user: User.where(name: params[:user_name]))
+    else
+      @user_posts = @posts
+    end
   end
 
   def user_posts
